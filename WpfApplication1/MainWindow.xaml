@@ -1,12 +1,21 @@
-﻿<Window x:Class="WpfApplication1.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WpfApplication1.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Instruction Editor" Height="600" Width="525">
     <Grid>
-        
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="169" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="413" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="listBox_SelectionChanged"/>
+        <Button x:Name="button" Content="Create" HorizontalAlignment="Left" Margin="95,524,0,0" VerticalAlignment="Top" Width="94" Height="35" Click="button_Click" Focusable="False"/>
+        <StackPanel x:Name="stackPanel1" HorizontalAlignment="Left" Height="341" Margin="10,168,0,0" VerticalAlignment="Top" Width="232"/>
+        <StackPanel x:Name="stackPanel2" HorizontalAlignment="Left" Height="341" Margin="247,168,0,0" VerticalAlignment="Top" Width="232"/>
+        <Button x:Name="button2" Content="Delete" HorizontalAlignment="Left" Margin="194,524,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="button2_Click"/>
+        <Button x:Name="button2_Copy" Content="Save" HorizontalAlignment="Left" Margin="289,524,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="button2_Copy_Click"/>
+        <CheckBox x:Name="checkBox" Content="Add to end" HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2_Copy1" Content="Load" HorizontalAlignment="Left" Margin="384,524,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="button2_Copy1_Click"/>
     </Grid>
 </Window>

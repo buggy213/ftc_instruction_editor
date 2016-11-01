@@ -1,0 +1,3 @@
+﻿{ type = movement, distance = DOUBLE, angle = DOUBLE, speed = DOUBLE }
+{ type = turn, angle = DOUBLE, speed = DOUBLE }
+
