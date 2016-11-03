@@ -406,6 +406,61 @@ namespace WpfApplication1
         {
             LoadFile();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentInstructionIndex == 0)
+            {
+                return;
+            }
+            else
+            {
+                // Swap the two
+                Instruction current = currentInstruction;
+                listBox.Items.RemoveAt(currentInstructionIndex);
+                currentInstructionIndex--;
+                Instruction swap = (Instruction)listBox.Items.GetItemAt(currentInstructionIndex);
+                listBox.Items.RemoveAt(currentInstructionIndex);
+                if (currentInstructionIndex == 0)
+                {
+                    listBox.Items.Insert(0, swap);
+                    listBox.Items.Insert(0, current);
+                }
+                else
+                {
+                    listBox.Items.Insert(currentInstructionIndex, current);
+                    listBox.Items.Insert(currentInstructionIndex + 1, swap);
+                }
+                listBox.SelectedItem = current;
+            }
+        }
+
+        private void button1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentInstructionIndex == listBox.Items.Count)
+            {
+                return;
+            }
+            else
+            {
+                // Swap the two
+                Instruction current = currentInstruction;
+                listBox.Items.RemoveAt(currentInstructionIndex);
+                Instruction swap = (Instruction)listBox.Items.GetItemAt(currentInstructionIndex);
+                listBox.Items.RemoveAt(currentInstructionIndex);
+                if (currentInstructionIndex == listBox.Items.Count)
+                {
+                    listBox.Items.Add(swap);
+                    listBox.Items.Add(current);
+                }
+                else
+                {
+                    listBox.Items.Insert(currentInstructionIndex, current);
+                    listBox.Items.Insert(currentInstructionIndex, swap);
+                }
+                listBox.SelectedItem = current;
+            }
+        }
     }
 }
 

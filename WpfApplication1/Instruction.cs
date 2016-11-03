@@ -42,7 +42,6 @@ public class Instruction
         }
         sb.Append(" }");
         sb.AppendLine();
-        sb.AppendLine("---");
         return sb.ToString();
     }
 

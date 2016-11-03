@@ -17,5 +17,7 @@
         <Button x:Name="button2_Copy" Content="Save" HorizontalAlignment="Left" Margin="289,524,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="button2_Copy_Click"/>
         <CheckBox x:Name="checkBox" Content="Add to end" HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button2_Copy1" Content="Load" HorizontalAlignment="Left" Margin="384,524,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="button2_Copy1_Click"/>
+        <Button x:Name="button1" Content="Up" HorizontalAlignment="Left" Margin="428,10,0,0" VerticalAlignment="Top" Width="35" Height="35" Cursor="UpArrow" Click="button1_Click"/>
+        <Button x:Name="button1_Copy" Content="Down" HorizontalAlignment="Left" Margin="428,50,0,0" VerticalAlignment="Top" Width="35" Height="35" Cursor="Arrow" Click="button1_Copy_Click"/>
     </Grid>
 </Window>
