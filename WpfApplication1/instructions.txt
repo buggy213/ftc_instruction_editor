@@ -1,3 +1,3 @@
-﻿{ type = movement, distance = DOUBLE, angle = DOUBLE, speed = DOUBLE }
-{ type = turn, angle = DOUBLE, speed = DOUBLE }
+﻿{ type = movement, name = STRING, distance = DOUBLE, angle = DOUBLE, speed = DOUBLE }
+{ type = turn, name = STRING, angle = DOUBLE, speed = DOUBLE }
 
