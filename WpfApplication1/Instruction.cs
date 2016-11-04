@@ -46,7 +46,6 @@ public class Instruction
             sb.Append(", \"" + kvp.Key + "\" = " + kvp.Value);
         }
         sb.Append(" }");
-        sb.AppendLine();
         return sb.ToString();
     }
 

@@ -342,7 +342,7 @@ namespace WpfApplication1
                 {
                     sb.Append(ins.PrintType());
                     if (ins != instructions.Last())
-                        sb.Append(",");
+                        sb.Append(", ");
                 }
 
                 sb.Append(" ]");
@@ -352,6 +352,8 @@ namespace WpfApplication1
                 foreach (Instruction ins in instructions)
                 {
                     sb.Append(ins.WriteToJson());
+                    if (ins != instructions.Last())
+                        sb.Append(", ");
                 }
                 sb.Append("]");
                 
