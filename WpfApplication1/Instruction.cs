@@ -34,7 +34,7 @@ public class Instruction
 
     public string PrintType ()
     {
-        return "\"type\" = \"" + template.type + "\""; 
+        return '"' + template.type + '"'; 
     }
 
     public string WriteToJson()
