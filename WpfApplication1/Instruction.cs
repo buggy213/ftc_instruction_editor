@@ -32,13 +32,18 @@ public class Instruction
 
     }
 
+    public string PrintType ()
+    {
+        return "\"type\" = \"" + template.type + "\""; 
+    }
+
     public string WriteToJson()
     {
         StringBuilder sb = new StringBuilder();
         sb.Append("{ \"type\" = \"" + template.type + "\"");
         foreach (KeyValuePair <string, string> kvp in instructionParameters)
         {
-            sb.Append(", \"" + kvp.Key + "\" = \"" + kvp.Value + "\"");
+            sb.Append(", \"" + kvp.Key + "\" = " + kvp.Value);
         }
         sb.Append(" }");
         sb.AppendLine();

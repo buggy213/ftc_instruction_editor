@@ -27,6 +27,8 @@ namespace WpfApplication1
         List<Instruction> instructions;
         Instruction currentInstruction;
 
+        const string TYPE_INSTRUCTION_SEPERATOR = "###";
+
         int currentInstructionIndex;
 
         public MainWindow()
@@ -217,9 +219,10 @@ namespace WpfApplication1
         {
             List<JsonObject> jsonObjects = new List<JsonObject>();
 
-            textFile = Regex.Replace(textFile, @"\t|\n|\r", "");
 
-            string[] instructions = textFile.Split(new string[] { "{", "}", "---" }, StringSplitOptions.RemoveEmptyEntries);
+            textFile = Regex.Replace(textFile, @"\t|\n|\r", "");
+            textFile = textFile.Split(new string[] { TYPE_INSTRUCTION_SEPERATOR }, StringSplitOptions.RemoveEmptyEntries)[1];
+            string[] instructions = textFile.Split(new string[] { "{", "}", "[", "]", "---" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string instruction in instructions)
             {
                 JsonObject jsonObject = new JsonObject() { elements = new List<ObjectElement>() };
@@ -331,10 +334,27 @@ namespace WpfApplication1
                 string fileName = dlg.FileName;
                 StringBuilder sb = new StringBuilder();
 
+
+                // Maybe make this slightly more sensible?
+                sb.Append("[ ");
+                // First pass to print out types
+                foreach (Instruction ins in instructions)
+                {
+                    sb.Append(ins.PrintType());
+                    if (ins != instructions.Last())
+                        sb.Append(",");
+                }
+
+                sb.Append(" ]");
+                sb.AppendLine();
+                sb.AppendLine(TYPE_INSTRUCTION_SEPERATOR);
+                sb.Append("[");
                 foreach (Instruction ins in instructions)
                 {
                     sb.Append(ins.WriteToJson());
                 }
+                sb.Append("]");
+                
                 File.WriteAllText(fileName, sb.ToString());
             }
 
