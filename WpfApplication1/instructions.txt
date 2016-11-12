@@ -1,3 +1,5 @@
-﻿{ type = movement, name = STRING, distance = DOUBLE, angle = DOUBLE, speed = DOUBLE }
+{ type = movement, name = STRING, distance = DOUBLE, angle = DOUBLE, speed = DOUBLE }
 { type = turn, name = STRING, angle = DOUBLE, speed = DOUBLE }
-
+{ type = push_beacon, name = STRING, time = DOUBLE, speed = DOUBLE }
+{ type = servo, name = STRING, speed = DOUBLE, position = DOUBLE }
+{ type = line_follow, name = STRING, speed = DOUBLE, encoder_count = INT }
