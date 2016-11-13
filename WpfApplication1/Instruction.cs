@@ -84,7 +84,7 @@ public class InstructionTemplate
                     break;
 
                 case InstructionParameterType.CHARACTER:
-                    char.Parse(input);
+                    int.Parse(input);
                     break;
 
                 case InstructionParameterType.INTEGER:
